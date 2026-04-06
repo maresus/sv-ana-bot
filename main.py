@@ -19,8 +19,12 @@ app = FastAPI(title=settings.project_name)
 
 init_db()
 
-# Naloži knowledge base
+# Naloži knowledge base — če ne obstaja, zgradi ga
 kb_path = Path("knowledge.jsonl")
+if not kb_path.exists() or kb_path.stat().st_size < 1000:
+    print("[KB] knowledge.jsonl ne obstaja, scrapiram sv-ana.si...")
+    import subprocess, sys
+    subprocess.run([sys.executable, "scrape_sv_ana.py"], check=True)
 n = load_knowledge(kb_path)
 print(f"[KB] Naloženih {n} zapisov iz {kb_path}")
 
