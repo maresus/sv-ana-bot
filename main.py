@@ -19,10 +19,14 @@ app = FastAPI(title=settings.project_name)
 
 init_db()
 
-# Naloži knowledge base iz Railway Volume /data/
-kb_path = Path("/data/knowledge.jsonl")
-if not kb_path.exists():
-    kb_path = Path("knowledge.jsonl")  # fallback lokalno
+# Naloži knowledge base — razpakira iz knowledge.jsonl.gz če je treba
+import gzip, shutil
+kb_path = Path("knowledge.jsonl")
+kb_gz = Path("knowledge.jsonl.gz")
+if not kb_path.exists() and kb_gz.exists():
+    print("[KB] Razpakiram knowledge.jsonl.gz...")
+    with gzip.open(kb_gz, 'rb') as f_in, open(kb_path, 'wb') as f_out:
+        shutil.copyfileobj(f_in, f_out)
 n = load_knowledge(kb_path)
 print(f"[KB] Naloženih {n} zapisov iz {kb_path}")
 
