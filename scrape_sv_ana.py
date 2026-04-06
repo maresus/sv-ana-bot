@@ -17,9 +17,14 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
+import argparse as _argparse
+_parser = _argparse.ArgumentParser(add_help=False)
+_parser.add_argument("--output", default=None)
+_args, _ = _parser.parse_known_args()
+
 BASE_URL = "https://www.sv-ana.si"
 USER_AGENT = "SvAnaAIBot/1.0 (+https://sv-ana.si)"
-OUTPUT = Path(__file__).parent.parent / "knowledge.jsonl"
+OUTPUT = Path(_args.output) if _args.output else Path(__file__).parent / "knowledge.jsonl"
 
 SKIP_PATTERNS = [
     "/administrator/", "/templates/", "/modules/", "/plugins/",
