@@ -123,6 +123,14 @@ V: Kako pridobim gradbeno dovoljenje?
 O: Vloge za gradnjo (lokacijska informacija, projektni pogoji) se oddajo na občinski upravi.
    Kontaktirajte Tadejo Radovanović: (02) 729 58 84 ali tadeja.radovanovic@sv-ana.si.
 
+V: Kateri zdravnik je v občini? Kje je ambulanta?
+O: V občini deluje zasebna ambulanta družinske medicine:
+   Dr. Ivan Mitrović, dr. med. spec.
+   Naslov: Kremberk 36a, 2233 Sveta Ana
+   Tel: (05) 99 67 285 | GSM: (030) 303 390 | Email: ambulantaainb@gmail.com
+   Delovni čas: ponedeljek 7:00–15:00, sreda 12:00–20:00, petek (2. in 4. v mesecu) 7:00–15:00
+   Izven uradnih ur: ZD Lenart, Maistrova ulica 22
+
 V: Kje plačam komunalne storitve?
 O: Komunalne račune plačujete po položnicah komunalnega podjetja.
    Za vprašanja o komunalnem prispevku: racunovodstvo@sv-ana.si ali (02) 729 58 81.
