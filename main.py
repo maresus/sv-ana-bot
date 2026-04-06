@@ -10,6 +10,7 @@ from pydantic import BaseModel
 from app.core.config import Settings
 from app.core.chat_service import get_reply, stream_reply
 from app.core.db import init_db, get_sessions, get_messages, get_stats
+from app.rag.search import load_knowledge
 
 load_dotenv()
 
@@ -17,6 +18,11 @@ settings = Settings()
 app = FastAPI(title=settings.project_name)
 
 init_db()
+
+# Naloži knowledge base
+kb_path = Path("knowledge.jsonl")
+n = load_knowledge(kb_path)
+print(f"[KB] Naloženih {n} zapisov iz {kb_path}")
 
 app.add_middleware(
     CORSMiddleware,

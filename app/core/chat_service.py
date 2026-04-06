@@ -1,5 +1,6 @@
 from app.core.llm_client import get_llm_client, get_model
 from app.core.db import save_message
+from app.rag.search import get_context
 
 SYSTEM_PROMPT = """Si Ana, prijazna in strokovna virtualna asistentka Občine Sveta Ana v Slovenskih goricah.
 Pomagaš občanom, obiskovalcem in vsem zainteresiranim z informacijami o občini.
@@ -147,7 +148,12 @@ def stream_reply(session_id: str, user_message: str):
     history.append({"role": "user", "content": user_message})
     save_message(session_id, "user", user_message)
 
-    messages = [{"role": "system", "content": SYSTEM_PROMPT}] + history
+    context = get_context(user_message, top_k=4)
+    system = SYSTEM_PROMPT
+    if context:
+        system += f"\n\n=== KONTEKST IZ BAZE ZNANJA ===\n{context}\n=== KONEC KONTEKSTA ==="
+
+    messages = [{"role": "system", "content": system}] + history
 
     full_reply = ""
     stream = client.chat.completions.create(
@@ -180,7 +186,12 @@ def get_reply(session_id: str, user_message: str) -> str:
     history.append({"role": "user", "content": user_message})
     save_message(session_id, "user", user_message)
 
-    messages = [{"role": "system", "content": SYSTEM_PROMPT}] + history
+    context = get_context(user_message, top_k=4)
+    system = SYSTEM_PROMPT
+    if context:
+        system += f"\n\n=== KONTEKST IZ BAZE ZNANJA ===\n{context}\n=== KONEC KONTEKSTA ==="
+
+    messages = [{"role": "system", "content": system}] + history
 
     response = client.chat.completions.create(
         model=model,
