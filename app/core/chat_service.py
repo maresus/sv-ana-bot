@@ -66,8 +66,22 @@ Dražen Vrh, Froleh, Kremberk, Krivi Vrh, Ledinek, Lokavec, Rožengrunt,
 Sveta Ana, Zgornja Bačkova, Zgornja Ročica, Zgornja Ščavnica, Žice
 
 UPRAVA IN ORGANI:
-- Občinski svet (mandat 2022–2026)
-- Župan in podžupanja
+ŽUPAN: Martin Breznik, univ. dipl. prav., dipl. ekon. (Lista ZA Sveto Ano)
+  Tel: 031 336 042 | Email: martin.breznik@sv-ana.si | Mandat: 2022–2026
+
+PODŽUPANJA: Breda Špindler
+
+OBČINSKI SVET 2022–2026 (9 svetnikov):
+1. Breda Špindler (podžupanja)
+2. Viktor Kapl
+3. Silvo Nikl
+4. Karl Škrlec
+5. Jernej Polanec
+6. Špela Čeh
+7. Karina Lorenčič
+8. David Roškarič
+9. Valentina Ornik
+
 - Nadzorni odbor
 - Odbor za gospodarstvo in okolje
 - Ostali odbori in komisije
