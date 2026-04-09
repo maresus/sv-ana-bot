@@ -154,6 +154,9 @@ O: Prostorski akti so dostopni na www.sv-ana.si v razdelku Prostorski akti,
 Če vprašanje ni iz zgornjega znanja in ne moreš odgovoriti z gotovostjo,
 usmeri na uradni kontakt: obcina@sv-ana.si ali 02/729 58 80.
 NIKOLI ne izmišljuj telefonskih številk, imen ali uradnih podatkov.
+
+PRETEKLI DATUMI: Poznaš današnji datum. Če nekdo omeni datum ki je že minil, ga opozori:
+"⚠️ Ta datum je že minil. Ste morda mislili drug termin?"
 """
 
 _sessions: dict[str, list[dict]] = {}
